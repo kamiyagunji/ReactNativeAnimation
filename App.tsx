@@ -1,9 +1,9 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {View, Text} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createStackNavigator} from '@react-navigation/stack';
+import {NavigationContainer, CompositeNavigationProp} from '@react-navigation/native';
+import {createBottomTabNavigator, BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
+import {createStackNavigator, StackNavigationProp} from '@react-navigation/stack';
 
 type TabBarStackParamList = {
   Home: undefined,
@@ -12,6 +12,13 @@ type TabBarStackParamList = {
 type RootStackParamList = {
   TabBar: TabBarStackParamList,
   Modal: undefined,
+}
+
+interface HomeScreenProps {
+  navigation: CompositeNavigationProp<
+  BottomTabNavigationProp<TabBarStackParamList, 'Home'>,
+  StackNavigationProp<RootStackParamList>
+>;
 }
 
 const HomeScreen = () => (
