@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
+import AddButton from './src/components/add-button';
 import {View, Text} from 'react-native';
 import {NavigationContainer, CompositeNavigationProp} from '@react-navigation/native';
 import {createBottomTabNavigator, BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
@@ -21,11 +22,20 @@ interface HomeScreenProps {
 >;
 }
 
-const HomeScreen = () => (
-  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <Text>Home</Text>
-  </View>
-);
+const HomeScreen = ({ navigation }: HomeScreenProps) => {
+  const onAdd = () => {
+    navigation.navigate('Modal');
+  };
+
+  return (
+    <>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Home</Text>
+      </View>
+      <AddButton onAdd={onAdd} />
+    </>
+  );
+};
 
 const ModalScreen = () => (
   <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'navy'}}>
