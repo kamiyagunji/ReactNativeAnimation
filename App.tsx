@@ -21,10 +21,7 @@ const HomeScreen = () => (
 );
 
 const ModalScreen = () => (
-  <View style={{
-    flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'navy',
-  }}
-  >
+  <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'navy'}}>
     <Text>Modal</Text>
   </View>
 );
