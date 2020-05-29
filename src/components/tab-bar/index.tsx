@@ -2,8 +2,8 @@ import React from 'react';
 import {
   TouchableOpacity, StyleSheet, View, Text,
 } from 'react-native';
-import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import AddButton from '../add-button';
 import withInsets, { withInsetsProps } from '../with-insets';
 
@@ -14,7 +14,9 @@ const styles = StyleSheet.create({
 });
 
 
-const TabBar = ({ state, descriptors, navigation } : BottomTabBarProps) => {
+const TabBar = ({
+  state, descriptors, navigation, insets,
+} : TabBarProps) => {
   const onAdd = () => {
     navigation.navigate('Modal');
   };
@@ -22,7 +24,7 @@ const TabBar = ({ state, descriptors, navigation } : BottomTabBarProps) => {
   return (
     <>
       {(state.index === 0) && (
-        <AddButton onAdd={onAdd} />
+        <AddButton onAdd={onAdd} bottomInset={insets.bottom} />
       )}
       <SafeAreaView style={{ backgroundColor: 'white' }}>
         <View style={{ height: 55, flexDirection: 'row' }}>
@@ -79,4 +81,4 @@ const TabBar = ({ state, descriptors, navigation } : BottomTabBarProps) => {
   );
 };
 
-export default TabBar;
+export default withInsets(TabBar);
