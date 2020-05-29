@@ -14,6 +14,12 @@ type RootStackParamList = {
   Modal: undefined,
 }
 
+const HomeScreen = () => (
+  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <Text>Home</Text>
+  </View>
+);
+
 const App = () => (
   <NavigationContainer>
     <RootStack.Navigator headerMode="none" mode="modal">
