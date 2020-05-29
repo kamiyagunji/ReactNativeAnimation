@@ -7,6 +7,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import AddButton from '../add-button';
 import withInsets, { withInsetsProps } from '../with-insets';
 
+export type TabBarProps = BottomTabBarProps & withInsetsProps;
 
 const styles = StyleSheet.create({
   tabButton: { flex: 1, justifyContent: 'center', alignItems: 'center' },
