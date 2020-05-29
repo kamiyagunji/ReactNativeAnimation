@@ -52,9 +52,29 @@ const TabBarStackScreen = () => (
 
 const RootStack = createStackNavigator<RootStackParamList>();
 
+const opacityTransition: object = {
+  gestureDirection: 'horizontal',
+  transitionSpec: {
+    open: {
+      animation: 'timing',
+    },
+    close: {
+      animation: 'timing',
+      config: {
+        duration: 300,
+      },
+    },
+  },
+  cardStyleInterpolator: ({ current } : {current: {progress: number}}) => ({
+    cardStyle: {
+      opacity: current.progress,
+    },
+  }),
+};
+
 const App = () => (
   <NavigationContainer>
-    <RootStack.Navigator headerMode="none" mode="modal">
+    <RootStack.Navigator headerMode="none" mode="modal" screenOptions={{ ...opacityTransition }}>
       <RootStack.Screen name="TabBar" component={TabBarStackScreen} />
       <RootStack.Screen name="Modal" component={ModalScreen} />
     </RootStack.Navigator>
