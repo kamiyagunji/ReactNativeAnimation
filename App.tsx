@@ -26,6 +26,8 @@ const ModalScreen = () => (
   </View>
 );
 
+const TabBarStack = createBottomTabNavigator<TabBarStackParamList>();
+
 const App = () => (
   <NavigationContainer>
     <RootStack.Navigator headerMode="none" mode="modal">
