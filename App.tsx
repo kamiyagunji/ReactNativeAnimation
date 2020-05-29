@@ -27,6 +27,11 @@ const ModalScreen = () => (
 );
 
 const TabBarStack = createBottomTabNavigator<TabBarStackParamList>();
+const TabBarStackScreen = () => (
+  <TabBarStack.Navigator>
+    <TabBarStack.Screen name="Home" component={HomeScreen} />
+  </TabBarStack.Navigator>
+);
 
 const App = () => (
   <NavigationContainer>
