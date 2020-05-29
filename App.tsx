@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import AddButton from './src/components/add-button';
+import TabBar from './src/components/tab-bar';
 import {View, Text} from 'react-native';
 import {NavigationContainer, CompositeNavigationProp} from '@react-navigation/native';
 import {createBottomTabNavigator, BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
@@ -38,7 +39,7 @@ const ModalScreen = () => (
 
 const TabBarStack = createBottomTabNavigator<TabBarStackParamList>();
 const TabBarStackScreen = () => (
-  <TabBarStack.Navigator>
+  <TabBarStack.Navigator tabBar={(props) => <TabBar {...props} />}>
     <TabBarStack.Screen name="Home" component={HomeScreen} />
   </TabBarStack.Navigator>
 );
