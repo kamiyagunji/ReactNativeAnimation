@@ -24,3 +24,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
+
+type AddButtonProps = {
+  onAdd: () => void,
+}
