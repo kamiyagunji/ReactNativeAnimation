@@ -23,7 +23,7 @@ type AddButtonProps = {
   bottomInset: number
 }
 
-const AddButton = ({ onAdd } : AddButtonProps) => {
+const AddButton = ({ onAdd, bottomInset } : AddButtonProps) => {
   const [scaleValue] = useState(new Animated.Value(0));
   const onButtonClicked = () => {
     Animated.timing(scaleValue, {
@@ -39,15 +39,18 @@ const AddButton = ({ onAdd } : AddButtonProps) => {
     outputRange: [1, 20, 30],
   });
 
-  return (
+	return (
     <>
       <Animated.View
         style={[styles.container,
-          { transform: [{ scale: scaleValueInterpolation }] },
+          {
+            transform: [{ scale: scaleValueInterpolation }],
+            bottom: 70 + bottomInset,
+          },
         ]}
       />
       <TouchableOpacity
-        style={styles.container}
+        style={[styles.container, { bottom: 70 + bottomInset }]}
         onPress={onButtonClicked}
       >
         <Text style={styles.text}>
