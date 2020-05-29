@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
 
 type AddButtonProps = {
   onAdd: () => void,
+  bottomInset: number
 }
 
 const AddButton = ({ onAdd } : AddButtonProps) => {
