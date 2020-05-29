@@ -33,7 +33,7 @@ const TabBarStackScreen = () => (
   </TabBarStack.Navigator>
 );
 
-const RootStack = createStackNavigator<RootStackParamList>@();
+const RootStack = createStackNavigator<RootStackParamList>();
 
 const App = () => (
   <NavigationContainer>
