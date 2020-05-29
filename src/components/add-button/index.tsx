@@ -12,15 +12,9 @@ const styles = StyleSheet.create({
     right: 20,
     alignItems: 'center',
     justifyContent: 'center',
-    bottom: 20,
+    bottom: 75,
     zIndex: 1,
     elevation: 1,
-  },
-
-  text: {
-    color: 'white',
-    fontSize: 24,
-    fontWeight: 'bold',
   },
 });
 
