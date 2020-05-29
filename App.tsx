@@ -5,6 +5,10 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 
+type TabBarStackParamList = {
+  Home: undefined,
+}
+
 const App = () => (
   <NavigationContainer>
     <RootStack.Navigator headerMode="none" mode="modal">
