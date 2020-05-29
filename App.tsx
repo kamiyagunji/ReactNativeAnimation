@@ -22,20 +22,13 @@ interface HomeScreenProps {
 >;
 }
 
-const HomeScreen = ({ navigation }: HomeScreenProps) => {
-  const onAdd = () => {
-    navigation.navigate('Modal');
-  };
-
-  return (
-    <>
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Home</Text>
-      </View>
-      <AddButton onAdd={onAdd} />
-    </>
-  );
-};
+const HomeScreen = () => (
+  <>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Home</Text>
+    </View>
+  </>
+);
 
 const ModalScreen = () => (
   <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'navy'}}>
