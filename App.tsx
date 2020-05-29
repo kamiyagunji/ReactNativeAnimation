@@ -9,6 +9,11 @@ type TabBarStackParamList = {
   Home: undefined,
 }
 
+type RootStackParamList = {
+  TabBar: TabBarStackParamList,
+  Modal: undefined,
+}
+
 const App = () => (
   <NavigationContainer>
     <RootStack.Navigator headerMode="none" mode="modal">
