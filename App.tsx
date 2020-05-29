@@ -20,6 +20,15 @@ const HomeScreen = () => (
   </View>
 );
 
+const ModalScreen = () => (
+  <View style={{
+    flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'navy',
+  }}
+  >
+    <Text>Modal</Text>
+  </View>
+);
+
 const App = () => (
   <NavigationContainer>
     <RootStack.Navigator headerMode="none" mode="modal">
