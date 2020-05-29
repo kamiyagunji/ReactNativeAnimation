@@ -5,6 +5,7 @@ import {
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AddButton from '../add-button';
+import withInsets, { withInsetsProps } from '../with-insets';
 
 
 const styles = StyleSheet.create({
